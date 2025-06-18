@@ -1,0 +1,87 @@
+Men ishlab chiqarish zavodi uchun (g‘isht zavodi) real vaqt asosida ishlaydigan, kamera orqali o‘tayotgan g‘ishtlarni avtomatik aniqlab va sanab boradigan **professional, ishonchli va zamonaviy video monitoring tizimi** ishlab chiqmoqchiman. Loyihani quyidagi texnik shartlar asosida to‘liq yechimini yozing:
+
+✅ Maqsad:
+- Kamera orqali liniyada harakatlanayotgan **g‘ishtlarni sanaydigan** tizim.
+- **Telegram orqali monitoring**, **ovozli signal**, **statistika**, va **grafik interfeys** bo‘lishi kerak.
+- Barcha narsa **ishlab chiqarish muhitida ishonchli ishlashi** lozim.
+
+---
+
+### 🎯 Asosiy talablar:
+
+1. 📷 **Model va obyekt aniqlash**:
+   - YOLOv8 (yoki kerakli bo‘lsa boshqa samarali model) yordamida **g‘ishtlar**ni aniqlash.
+   - Agar model mavjud bo‘lmasa, **internetdan kerakli modellarni yuklab olish imkoniyati** bo‘lishi kerak.
+   - Model faqat g‘ishtni tanisin, fon, odamlar, soyalar xatolik bilan sanalmay qo‘yilsin.
+   - Har bir o‘tgan g‘isht uchun faqat bir marta hisob kiritilsin.
+
+2. 💡 **FPS (Frame-per-second) yuqori bo‘lishi**, tizim sekin ishlamasligi, tutilmasligi.
+
+3. 🔉 **Ovozli signal** (masalan, `beep.mp3`) o‘tgan har bir g‘ishtdan so‘ng eshitilsin.
+   - Ovoz `pygame` orqali yangrasin.
+   - `beep.mp3` fayli bilan ishlash yo‘riqnomasi yozilsin.
+
+4. 💬 **Telegram Bot Integratsiyasi**:
+   - Dastur boshlanganda: Telegram botga `🟢 Hisob boshlandi` deb yozilsin.
+   - Dastur tugaganda: `🔴 Hisob tugadi` + vaqt + jami hisob yuborilsin.
+   - Har bir g‘isht hisoblanganda, **xabar tahrirlanib** yangilanib borilsin (`editMessageText`).
+   - Juda ko‘p bo‘lsa, **yangi xabar ochilsin**.
+   - Telegram orqali **"statistika" buyrug‘i yuborilsa**, bugungi statistika chiroyli ko‘rinishda bot orqali yuborilsin.
+
+5. 🧾 **SQLite3 bilan baza**:
+   - Har bir o‘tgan obyekt uchun vaqt, sana, va hisob `hisob.db` ga yozilsin.
+   - Telegram yoki GUI orqali **kunlik yoki soatlik hisobni chiqarish** imkoniyati bo‘lsin.
+
+6. 🖥️ **Grafik Interfeys (OpenCV yoki Tkinter)**:
+   - Ekran oynasida chiroyli interfeys.
+   - 3 ta yirik tugma: `BOSHLASH`, `TUGATISH`, `STATISTIKA`.
+   - Har qanday ekran o‘lchamida tugmalar ko‘rinib tursin.
+   - Hisob ekranda ko‘rinib tursin (`Hisob: 123`).
+   - Tugmalar bosilganda: real vaqt o‘zgarish bo‘lsin.
+
+7. 📈 **Statistika dizayni chiroyli bo‘lsin**:
+   - `📊 Bugungi hisob:` sarlavha
+   - `2025-06-19 14:03 — 5 ta` kabi satrlar
+   - Juda chiroyli va botda o‘qilishi oson dizaynda.
+
+8. 📂 **Fayl tuzilmasi**:
+   - `main.py` — asosiy kod
+   - `beep.mp3` — signal
+   - `requirements.txt` — kutubxonalar
+   - `README.md` — ishga tushirish yo‘riqnomasi
+
+---
+
+### 🔗 Loyiha joylashuvi
+
+> Men loyihani GitHub yoki BulkSet platformasidagi `bulkset/gishtcounter` nomli repozitoriyda saqlamoqchiman. Shunday qilib, loyiha fayllari, model, konfiguratsiyalar va xujjatlar shu joyda joylashtiriladi.
+
+---
+
+### ⏱ Tizimni boshlaganda:
+
+- Telegramga shunday yoziladi:
+🟢 Hisob boshlandi:
+Sana: 2025-06-19
+Vaqt: 14:22:10
+
+shell
+Copy
+Edit
+
+### 🛑 Tizimni tugatganda:
+🔴 Hisob to‘xtatildi:
+Sana: 2025-06-19
+Vaqt: 15:31:55
+Jami: 268 ta g‘isht
+
+yaml
+Copy
+Edit
+
+---
+
+## ✅ Yakuniy natija:
+Menga to‘liq ishlaydigan, chiroyli interfeysli, Telegram bilan bog‘langan, audio signalga ega, statistikaga ega, modelni mustahkam ishlatadigan, **g‘isht zavodiga o‘rnatish mumkin bo‘lgan professional tizim** kerak. Dastur ishonchli, tez va barqaror ishlashi kerak.
+
+**Tayyor yechim, kod, model, fayllar tuzilmasi, ishga tushirish yo‘riqnomasi bilan to‘liq qilib yozing.**
