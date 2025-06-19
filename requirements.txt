@@ -1,0 +1,7 @@
+ultralytics
+opencv-python
+pygame
+python-telegram-bot
+sqlite3  # builtin
+numpy
+supervision  # zonalar uchun tracking

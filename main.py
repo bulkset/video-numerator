@@ -92,7 +92,7 @@ def on_click(e,x,y,flags,param):
 cv2.namedWindow("Hisoblash")
 cv2.setMouseCallback("Hisoblash", on_click)
 
-model = YOLO("yolov8n.pt")
+model = YOLO("yolo11s.pt")  # YOLOv11 model, replace with path or model name as needed
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, CAM_W)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, CAM_H)
@@ -135,6 +135,10 @@ while True:
             ids_list = boxes.id.int().tolist()
             centers = boxes.xywh[:,:2].tolist()
             classes = boxes.cls.int().tolist()
+            names = res[0].names  # список всех классов
+            for oid, ctr, cls in zip(ids_list, centers, classes):
+                label = names[cls]
+                print(f"🧾 Object ID: {oid}, Class: {cls} — {label}")
             for oid,ctr,cls in zip(ids_list,centers,classes):
                 if cls==0: continue
                 x=ctr[0]; prev = pos.get(oid); pos[oid]=x
@@ -157,8 +161,7 @@ while True:
     draw(START,"BOSHLASH",not tracking)
     draw(STOP,"TUGATISH",tracking)
     draw(STAT,"STATISTIKA",True)
-    cv2.putText(vis,f"Hisob: {count}",(10,30),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),2)
-
+    cv2.putText(vis,f"PHONE Test count: {count}",(10,30),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),2)
     cv2.imshow("Hisoblash",vis)
     if cv2.waitKey(1)==27: break
 
